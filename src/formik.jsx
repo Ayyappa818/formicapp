@@ -11,7 +11,7 @@ function StudentForm(){
         },
         validationSchema:Yup.object({
             firstname:Yup.string().required("please fill the name first it is manadatory")
-            .max(5),
+            .max(7),
             password:Yup.string().matches( )
         }),
         onSubmit:(values)=>{
@@ -28,8 +28,9 @@ function StudentForm(){
             <br />
             <input type="text" name="password" onChange={studentForm.handleChange}/>
             <br />
-            <button>Show data</button>
+            <button type="submit">Show data</button>
         </form>
+        {JSON.stringify(studentForm.errors)}
     </div>
 }
 export default StudentForm
